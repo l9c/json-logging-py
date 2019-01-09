@@ -97,6 +97,10 @@ class JSONFormatter(logging.Formatter):
 
     def format(self, record, serialize=True):
         # Create message dict
+
+        user_log = record.getMessage()
+        return user_log
+
         message = {
             'timestamp': self.format_timestamp(record.created),
             'message': json.loads(record.getMessage()),
