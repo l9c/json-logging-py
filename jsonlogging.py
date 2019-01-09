@@ -107,7 +107,7 @@ class JSONFormatter(logging.Formatter):
 
         message = {
             'timestamp': self.format_timestamp(record.created),
-            'message': decoder_user_log,
+            'message': decoded_user_log,
             'host': self.host,
             'path': record.pathname,
             'tags': self.tags[:],
