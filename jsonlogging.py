@@ -99,7 +99,7 @@ class JSONFormatter(logging.Formatter):
         # Create message dict
         message = {
             'timestamp': self.format_timestamp(record.created),
-            'message': record.getMessage(),
+            'message': json.loads(record.getMessage()),
             'host': self.host,
             'path': record.pathname,
             'tags': self.tags[:],
