@@ -6,7 +6,7 @@ with open('README.rst', 'r') as f:
 
 setup(
     name='json-logging-py',
-    version='0.2',
+    version='0.2.2',
     description='JSON / Logstash formatters for Python logging',
     long_description=readme,
     keywords=['json', 'logging', 'logstash'],
