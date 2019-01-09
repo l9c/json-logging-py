@@ -99,11 +99,15 @@ class JSONFormatter(logging.Formatter):
         # Create message dict
 
         user_log = record.getMessage()
-        return user_log
+
+        try:
+            decoded_user_log = json.loads(user_log)
+        except json.decoder.JSONDecodeError:
+            decoded_user_log = user_log
 
         message = {
             'timestamp': self.format_timestamp(record.created),
-            'message': json.loads(record.getMessage()),
+            'message': decoder_user_log,
             'host': self.host,
             'path': record.pathname,
             'tags': self.tags[:],
