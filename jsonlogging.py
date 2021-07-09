@@ -89,7 +89,7 @@ class JSONFormatter(logging.Formatter):
 
     @classmethod
     def format_exception(cls, exc_info):
-        return ''.join(traceback.format_exception(*exc_info)) if exc_info else ''
+        return traceback.format_exception(*exc_info) if exc_info else []
 
     @classmethod
     def serialize(cls, message, indent=None):
